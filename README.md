@@ -4,7 +4,7 @@
 The project is a mashup that consists of a restaurant system that manages delivery services for the customers and which analyse data in real-time to improve the business services. 
 
 
-### Our Goal:
+## Our Goal:
 * Increase sales in our restaurant
 * Sell more food and beverages.
 * Attract more customers.
@@ -12,16 +12,18 @@ The project is a mashup that consists of a restaurant system that manages delive
 * Encourage private parties or special events.
 * Increase the “cover average” of each guest.
 
-### Offered Services ([More details]())
+## Offered Services ([More details]())
 Our project will be consisting of 3 services:
-* Restaurant service ,which will manages restaurant information like name, owner, tables.
-* Reservation service that manages the reservation validation workflow.
-* Delivery service which manages to deliver the products to the customers.
-
 
 ### 1.Restaurant Service
+which will manages restaurant information like name, owner, tables.
+
 ### 2.Reservation Service
+which manages the reservation validation workflow.
+
 ### 3.Delivery Service
+which manages to deliver the products to the customers.
+
 * Use case: A customer orders food
 * Event Stream :
 * 1.New order intent will be created which be confirmed after setting up  required informations correctly (address) and successful payment if payment mode is online 
