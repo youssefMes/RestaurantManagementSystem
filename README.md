@@ -19,3 +19,12 @@ Our project will be consisting of 3 services:
 * Delivery service which manages to deliver the products to the customers.
 
 
+### 1.Restaurant Service
+### 2.Reservation Service
+### 3.Delivery Service
+* Use case: A customer orders food
+* Event Stream :
+* 1.New order intent will be created which be confirmed after setting up  required informations correctly (address) and successful payment if payment mode is online 
+* 2.A price will be available after requesting the database to calculate the price of articles ordered
+* 3.After requesting the google maps api with the entered address an estimation will be available which includes, when the food arrives + time for the food to be ready
+* 4.After delivering food the status of the order will be updated to delivered 
