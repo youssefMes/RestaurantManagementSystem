@@ -15,11 +15,11 @@ The project is a mashup that consists of a restaurant system that manages delive
 ## Offered Services
 Our project will be consisting of 3 services:
 
-### 1.Restaurant Service ([More..](https://github.com/youssefMes/RestaurantManagementSystem/wiki/1.-Restaurant-service))
+### 1. Restaurant Service ([More..](https://github.com/youssefMes/RestaurantManagementSystem/wiki/1.-Restaurant-service))
 which will manages restaurant information like name, owner, tables.
 
-### 2.Reservation Service ([More..](https://github.com/youssefMes/RestaurantManagementSystem/wiki/2.-Reservation-service))
+### 2. Reservation Service ([More..](https://github.com/youssefMes/RestaurantManagementSystem/wiki/2.-Reservation-service))
 which manages the reservation validation workflow.
 
-### 3.Delivery Service ([More..](https://github.com/youssefMes/RestaurantManagementSystem/wiki/3.-Delivery-service))
+### 3. Delivery Service ([More..](https://github.com/youssefMes/RestaurantManagementSystem/wiki/3.-Delivery-service))
 which manages to deliver the products to the customers.
