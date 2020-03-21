@@ -12,14 +12,14 @@ The project is a mashup that consists of a restaurant system that manages delive
 * Encourage private parties or special events.
 * Increase the “cover average” of each guest.
 
-## Offered Services ([Wiki](https://github.com/youssefMes/RestaurantManagementSystem/wiki/Offered-Services))
+## Offered Services
 Our project will be consisting of 3 services:
 
-### 1.Restaurant Service
+### 1.Restaurant Service ([More..](https://github.com/youssefMes/RestaurantManagementSystem/wiki/1.-Restaurant-service))
 which will manages restaurant information like name, owner, tables.
 
-### 2.Reservation Service
+### 2.Reservation Service ([More..](https://github.com/youssefMes/RestaurantManagementSystem/wiki/2.-Reservation-service))
 which manages the reservation validation workflow.
 
-### 3.Delivery Service
+### 3.Delivery Service ([More..](https://github.com/youssefMes/RestaurantManagementSystem/wiki/3.-Delivery-service))
 which manages to deliver the products to the customers.
