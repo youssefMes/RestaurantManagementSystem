@@ -12,7 +12,7 @@ The project is a mashup that consists of a restaurant system that manages delive
 * Encourage private parties or special events.
 * Increase the “cover average” of each guest.
 
-## Offered Services ([More details](https://github.com/youssefMes/RestaurantManagementSystem/wiki/Offered-Services))
+## Offered Services ([Wiki](https://github.com/youssefMes/RestaurantManagementSystem/wiki/Offered-Services))
 Our project will be consisting of 3 services:
 
 ### 1.Restaurant Service
