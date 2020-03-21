@@ -13,7 +13,7 @@ The project is a mashup that consists of a restaurant system that manages delive
 * Increase the “cover average” of each guest.
 
 ## Offered Services
-Our project will be consisting of 3 services:
+Our project consists of 3 services:
 
 ### 1. Restaurant Service ([More..](https://github.com/youssefMes/RestaurantManagementSystem/wiki/1.-Restaurant-service))
 which will manages restaurant information like name, owner, tables.
