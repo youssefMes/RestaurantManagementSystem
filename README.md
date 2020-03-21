@@ -12,3 +12,10 @@ The project is a mashup that consists of a restaurant system that manages delive
 * Encourage private parties or special events.
 * Increase the “cover average” of each guest.
 
+### Offered Services
+Our project will be consisting of 3 services:
+* Restaurant service ,which will manages restaurant information like name, owner, tables.
+* Reservation service that manages the reservation validation workflow.
+* Delivery service which manages to deliver the products to the customers.
+
+
