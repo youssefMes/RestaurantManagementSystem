@@ -25,4 +25,4 @@ which manages the reservation validation workflow.
 which manages to deliver the products to the customers.
 
 ## Developpement:
-For more informations about the developpment part, please click on the following [link]()
+For more informations about the developpment part, please click on the following [link](https://github.com/youssefMes/RestaurantManagementSystem/wiki/Developpment)
