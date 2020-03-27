@@ -20,7 +20,7 @@ Each menu item has a name, price and associated recipe. A recipe for a menu item
 ## Offered Services
 Our project consists of 3 services:
 
-### [1. Administration Service](https://github.com/youssefMes/RestaurantManagementSystem/wiki/1.-Restaurant-service)
+### [1. Administration Service](https://github.com/youssefMes/RestaurantManagementSystem/wiki/1.-Administration-service)
 which will manages restaurant information like name, owner, tables.
 
 ### [2. Reservation Service](https://github.com/youssefMes/RestaurantManagementSystem/wiki/2.-Reservation-service)
