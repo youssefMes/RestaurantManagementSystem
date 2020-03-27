@@ -23,3 +23,6 @@ which manages the reservation validation workflow.
 
 ### [3. Delivery Service](https://github.com/youssefMes/RestaurantManagementSystem/wiki/3.-Delivery-service)
 which manages to deliver the products to the customers.
+
+## Developpement:
+For more informations about the developpment part, please click on the following [link]()
