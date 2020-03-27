@@ -28,10 +28,10 @@ const OrderType = new GraphQLObjectType({
             }
         },
         menu: {
-            type: new GraphQLList(MenuType),
+            type: MenuType,
             resolve(parent, args){
                 // return _.filter(Orders, {userId: parent.id})
-                return Menu.find(parent.menuId);
+                return Menu.findById(parent.menuId);
             }
         }
     })

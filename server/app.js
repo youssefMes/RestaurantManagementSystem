@@ -19,7 +19,7 @@ mongoose.connection.once('open', () => {
 app.use(cors());
 app.use('/graphql', graphqlHTTP({
      schema,
-     //graphiql: true //enables graphql frontend to test queries
+     graphiql: true //enables graphql frontend to test queries
 
 }));
 app.listen(port, () => console.log(`App listening on port ${port}!`));
