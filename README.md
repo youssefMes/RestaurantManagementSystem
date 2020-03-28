@@ -29,7 +29,7 @@ The main objectives of the project are:
 Our project consists of 3 services:
 
 ### [1. Administration Service](https://github.com/youssefMes/RestaurantManagementSystem/wiki/1.-Administration-service)
-which will manages restaurant information like name, owner, tables.
+which will manages restaurant information like personals, costumers, tables, etc...
 
 ### [2. Reservation Service](https://github.com/youssefMes/RestaurantManagementSystem/wiki/2.-Reservation-service)
 which manages the reservation validation workflow.
