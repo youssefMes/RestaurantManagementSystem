@@ -1,5 +1,5 @@
 module.exports = {
-    kafka_topic: 'AddEvents',
+    kafka_topic: 'AddOrderEvent',
     kafka_server: 'localhost:9092',
-    kafka_message: 'An add event is created'
+    kafka_message: 'new order created successfully'
 };

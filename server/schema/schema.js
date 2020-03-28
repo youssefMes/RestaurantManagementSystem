@@ -1,3 +1,5 @@
+const Producer = require('../services/KafkaProduceService');
+const Consumer = require('../services/KafkaConsumeService');
 const graphql = require('graphql');
 const _ = require('lodash');
 const Order = require('../models/order');
@@ -97,7 +99,9 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(OrderType),
             resolve(parent, args){
                 // return Orders;
-                return Order.find({});
+                orders = Order.find({});
+                Consumer.consume();
+                return orders;
             }
         },
         users: {
@@ -149,7 +153,9 @@ const Mutation = new GraphQLObjectType({
                     userId: args.userId,
                     menuId: args.menuId,
                 });
-                return order.save();
+                order = order.save();
+                Producer.produce(args);
+                return order
             }
         },
         addMenu: {

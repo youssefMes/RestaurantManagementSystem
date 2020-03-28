@@ -3,9 +3,6 @@ const app = express();
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
-const config = require('./config/kafka');
-const kafka = require('kafka-node');
-const bp = require('body-parser');
 const port = 4000;
 const cors = require('cors');
 
