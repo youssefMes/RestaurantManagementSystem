@@ -19,7 +19,7 @@ So, RestaurantManagementSystem will develop to help the restaurant administrator
 * Increase sales in our restaurant
 * Sell more food and beverages.
 * Attract more customers.
-* Keep your business open for extended meal periods.
+* Keep the business open for extended meal periods.
 * Encourage private parties or special events.
 * Increase the “cover average” of each guest.
 
