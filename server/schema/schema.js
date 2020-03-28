@@ -135,7 +135,9 @@ const Mutation = new GraphQLObjectType({
                     username: args.username,
                     email: args.email
                 });
-                return user.save();
+                user = user.save();
+                Producer.produce(args, 'add_user');
+                return user
             }
         },
         addOrder: {
@@ -154,7 +156,7 @@ const Mutation = new GraphQLObjectType({
                     menuId: args.menuId,
                 });
                 order = order.save();
-                Producer.produce(args);
+                Producer.produce(args, "add_order");
                 return order
             }
         },
@@ -171,7 +173,9 @@ const Mutation = new GraphQLObjectType({
                     price: args.price,
                     type: args.type,
                 });
-                return menu.save();
+                menu = menu.save();
+                Producer.produce(args, "add_menu");
+                return menu
             }
         }
     }

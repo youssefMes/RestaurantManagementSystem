@@ -2,7 +2,7 @@ const kafka = require('kafka-node');
 const config = require('../config/kafka');
 
 module.exports = {
-    produce: function (args) {
+    produce: function (args, context) {
         try {
 
             const Producer = kafka.Producer;
@@ -12,24 +12,26 @@ module.exports = {
 
             let payloads = [
                 {
-                    topic: config.kafka_topic,
-                    messages: config.kafka_message + "with name: " + args.name
+                    topic: (context === "add_order") ? config.kafka_add_order_topic : (context === "add_menu") ? config.kafka_add_menu_topic : config.kafka_add_user_topic,
+                    messages: 'A new '+ context + " Event dispatched :" + JSON.stringify(args)
                 }
             ];
-
+            console.log(payloads);
             producer.on('ready', async function() {
                 let push_status = producer.send(payloads, (err, data) => {
                     if (err) {
-                        console.log('[kafka-producer -> '+config.kafka_topic+']: broker update failed');
+                        console.log('broker update failed');
+                        console.log(err)
                     } else {
-                        console.log('[kafka-producer -> '+config.kafka_topic+']: broker update success');
+                        console.log('broker update success')
+                        console.log(data);
                     }
                 });
             });
 
             producer.on('error', function(err) {
                 console.log(err);
-                console.log('[kafka-producer -> '+config.kafka_topic+']: connection errored');
+                console.log('connection errored');
                 throw err;
             });
         }

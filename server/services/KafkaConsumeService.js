@@ -2,13 +2,14 @@ const kafka = require('kafka-node');
 const config = require('../config/kafka');
 
 module.exports = {
-    consume: function () {
+    consume: function (context) {
         try {
             const Consumer = kafka.Consumer;
             const client = new kafka.KafkaClient(config.kafka_server);
             let consumer = new Consumer(
                 client,
-                [{ topic: config.kafka_topic, partition: 0 }],
+                [{ topic: (context === "add_order") ? config.kafka_add_order_topic : (context === "add_menu") ? config.kafka_add_menu_topic : config.kafka_add_user_topic,
+                    partition: 0 }],
                 {
                     autoCommit: true,
                     fetchMaxWaitMs: 1000,
