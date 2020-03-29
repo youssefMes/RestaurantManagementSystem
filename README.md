@@ -13,8 +13,6 @@ Online RestaurantManagementSystem is the system for manage the restaurant busine
 
 The project is developing because; many restaurants have a lot difficult to manage the business such as customer ordering and reservation table. If the customer book an order and later wants to cancel the order, he is permitted to do this only within a specific time period. By using manual customer ordering is difficult to waiter keep the correct customer information and maybe loss the customer information. The customer is also given with the facility to view the status of the order and if the order is ready then he can go and get it.
 
-## Requirements
-* 
 
 ## Goals of the Project:
 The RestaurantManagementSystem will develop to help the restaurant administrator to manage restaurant management and for customer make their online ordering and reservation table. At Management side, initially the staff member has to login, and according to his designation the privileges are set. Other than that, this project is to upgrade the manual system and make the business easily to access and systematic. If the staff member is a cook, then he is allowed to edit only the order items status, indicating which menu items he has prepared.
@@ -43,6 +41,6 @@ which manages to deliver the products to the customers.
 For more informations about the developpment process, please click on the following [**link**](https://github.com/youssefMes/RestaurantManagementSystem/wiki/Developpment-process)
 
 ## Concept
-For more documentation about the concept of the project, please go check out [**wiki**]()
+For more documentation about the concept of the project, please go check out [**wiki**](https://github.com/youssefMes/RestaurantManagementSystem/wiki/Homepage)
 
 
