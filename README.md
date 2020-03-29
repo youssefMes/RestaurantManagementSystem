@@ -41,6 +41,6 @@ which manages to deliver the products to the customers.
 For more informations about the developpment process, please click on the following [**link**](https://github.com/youssefMes/RestaurantManagementSystem/wiki/Developpment-process)
 
 ## Concept
-For more documentation about the concept of the project, please go check out [**wiki**](https://github.com/youssefMes/RestaurantManagementSystem/wiki/Homepage)
+For more documentation about the concept of the project, please go check out [**wiki**](https://github.com/youssefMes/RestaurantManagementSystem/wiki/Home)
 
 
