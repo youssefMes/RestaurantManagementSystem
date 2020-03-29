@@ -3,7 +3,6 @@ import { graphql } from 'react-apollo';
 import {flowRight as compose} from 'lodash';
 import '../App.css';
 import {getMenusAndUsersQuery, AddOrderMutation} from "../queries/queries";
-const { Kafka } = require('kafkajs');
 
 class AddOrder extends Component{
     constructor(props) {

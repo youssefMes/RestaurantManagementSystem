@@ -59,5 +59,26 @@ export const AddOrderMutation = gql`
         id
         }
     }
+`;
+
+export const AddMenuMutation = gql`
+    mutation($name: String!, $price: Float!, $type: String!){
+        addMenu(name: $name, price: $price, type: $type){
+        name
+        id
+        type
+        }
+    }
+    
+`;
+
+export const AddUserMutation = gql`
+    mutation($username: String!, $email: String!){
+        addUser(username: $username, email:$email){
+        username
+        email
+        id        
+        }
+    }
     
 `;

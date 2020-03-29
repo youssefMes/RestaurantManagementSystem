@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { graphql } from 'react-apollo';
-import { gql } from 'apollo-boost';
 import '../App.css';
 import {getOrdersQuery} from "../queries/queries";
 

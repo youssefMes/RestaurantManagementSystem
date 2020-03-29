@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import { graphql } from 'react-apollo';
-import { gql } from 'apollo-boost';
 import '../App.css';
 import {getUsersQuery} from "../queries/queries";
 
 
 class UsersList extends Component{
     render(){
-        console.log('this object', this);
         console.log('data', this.props.data.users);
         if (this.props.data.loading) return 'Loading...';
         if (this.props.data.error) return `Error! ${this.props.data.error.message}`;
