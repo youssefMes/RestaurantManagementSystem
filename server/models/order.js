@@ -7,7 +7,8 @@ const orderSchema = new Schema({
     name: String,
     price: String,
     userId: String,
-    menuId: String
+    menuId: String,
+    creation: String
 });
 
 module.exports=mongoose.model('Order', orderSchema);

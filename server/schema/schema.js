@@ -22,6 +22,7 @@ const OrderType = new GraphQLObjectType({
         id: {type: GraphQLID },
         name: {type: GraphQLString},
         price: {type: GraphQLFloat},
+        creation: {type: GraphQLString},
         user: {
             type: UserType,
             resolve(parent, args){
@@ -45,6 +46,7 @@ const UserType = new GraphQLObjectType({
         id: {type: GraphQLID },
         username: {type: GraphQLString},
         email: {type: GraphQLString},
+        creation: {type: GraphQLString},
         orders: {
             type: new GraphQLList(OrderType),
             resolve(parent, args){
@@ -62,6 +64,7 @@ const MenuType = new GraphQLObjectType({
         name: {type: new GraphQLNonNull(GraphQLString)},
         type: {type: new GraphQLNonNull(GraphQLString)},
         price: {type: new GraphQLNonNull(GraphQLFloat)},
+        creation: {type: GraphQLString},
     })
 });
 
@@ -100,7 +103,6 @@ const RootQuery = new GraphQLObjectType({
             resolve(parent, args){
                 // return Orders;
                 orders = Order.find({});
-                Consumer.consume();
                 return orders;
             }
         },
@@ -133,10 +135,11 @@ const Mutation = new GraphQLObjectType({
             resolve(parent, args){
                 let user = new User({
                     username: args.username,
-                    email: args.email
+                    email: args.email,
+                    creation: new Date()
                 });
                 user = user.save();
-                Producer.produce(args, 'add_user');
+                Producer.produce(args, "add_user");
                 return user
             }
         },
@@ -154,6 +157,7 @@ const Mutation = new GraphQLObjectType({
                     price: args.price,
                     userId: args.userId,
                     menuId: args.menuId,
+                    creation: new Date('')
                 });
                 order = order.save();
                 Producer.produce(args, "add_order");
@@ -172,6 +176,7 @@ const Mutation = new GraphQLObjectType({
                     name: args.name,
                     price: args.price,
                     type: args.type,
+                    creation: new Date()
                 });
                 menu = menu.save();
                 Producer.produce(args, "add_menu");

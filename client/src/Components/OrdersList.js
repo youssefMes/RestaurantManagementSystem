@@ -10,10 +10,12 @@ class OrdersList extends Component{
         console.log('data', this.props.data.orders)
         if (this.props.data.loading) return 'Loading...';
         if (this.props.data.error) return `Error! ${this.props.data.error.message}`;
-        if (this.props.data.orders !== undefined)return(
+        if (this.props.data.orders !== undefined){
+            return(
             <div>
+                <p> Count : {this.props.data.orders.length}</p>
                 {this.props.data.orders.map(order => (
-                    <div key="key">
+                    <div key="orders">
                         <p key={order.id}>{order.id}</p>
                         <p key={order.name}>{order.name}</p>
                         <p key={order.price}>{order.price}</p>
@@ -21,7 +23,7 @@ class OrdersList extends Component{
 
                 ))}
             </div>
-        )
+        )}
     }
 
 }

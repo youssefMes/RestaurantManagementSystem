@@ -12,13 +12,15 @@ export const getUsersQuery = gql`
 
 export const getOrdersQuery = gql`
     {
-        orders{
+        orders
+        {
             name
             id
             price
+            creation
             menu{
-            id
-            name
+                id
+                name
             }
             user {
                username
