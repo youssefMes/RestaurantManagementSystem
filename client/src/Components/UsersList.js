@@ -1,31 +1,60 @@
-import React, {Component} from 'react';
+import {getUsersQuery} from "../queries/queries";
+import React from 'react';
 import { graphql } from 'react-apollo';
 import '../App.css';
-import {getUsersQuery} from "../queries/queries";
+import Title from "./Title";
+import Link from '@material-ui/core/Link';
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
-
-class UsersList extends Component{
-    render(){
-        console.log('data', this.props.data.users);
-        if (this.props.data.loading) return 'Loading...';
-        if (this.props.data.error) return `Error! ${this.props.data.error.message}`;
-        if (this.props.data.users !== undefined)return(
-            <div>
-                {this.props.data.users.map(user => (
-                    <div key={"user" + user.email}>
-                        <p key={user.id}>{user.id}</p>
-                        <p key={user.username}>{user.username}</p>
-                        <p key={user.email}>{user.email}</p>
-                    </div>
-
-                ))}
-            </div>
-        )
+const useStyles = makeStyles((theme) => ({
+    seeMore: {
+        marginTop: theme.spacing(3),
+    },
+}));
+export function UsersList(props){
+    const classes = useStyles();
+    console.log('props', props);
+    if (props.data.loading) return 'Loading...';
+    if (props.data.error) return `Error! {props.data.error.message}`;
+    if (props.data.users !== undefined){
+        return(
+            <React.Fragment>
+                <Title>Users</Title>
+                <Table size="small">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>ID</TableCell>
+                            <TableCell>Username</TableCell>
+                            <TableCell>Email </TableCell>
+                            <TableCell>Creation </TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {props.data.users.map((row) => (
+                            <TableRow key={row.id}>
+                                <TableCell>{row.id}</TableCell>
+                                <TableCell>{row.username}</TableCell>
+                                <TableCell>{row.email}</TableCell>
+                                <TableCell>{row.creation}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+                <div className={classes.seeMore}>
+                    <Link color="primary" href="#" onClick={(e) => e.preventDefault()}>
+                        See more Users
+                    </Link>
+                </div>
+            </React.Fragment>)
     }
 
 }
 
-
-
-
 export default graphql(getUsersQuery)(UsersList);
+
+

@@ -1,52 +1,54 @@
-import React, {Component} from 'react';
-import { graphql } from 'react-apollo';
-import '../App.css';
+import React from 'react';
+import Button from '@material-ui/core/Button'
+import { useTheme } from '@material-ui/core/styles';
+import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
+import StepLabel from '@material-ui/core/StepLabel';
+import Input from '@material-ui/core/Input';
+import { useState } from 'react';
+import Title from './Title';
+import {graphql} from "react-apollo";
 import {AddMenuMutation} from "../queries/queries";
-class AddMenu extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: "",
-            type: "",
-            price: 0,
-        }
-    }
-    handleSubmit(e){
-        e.preventDefault();
-        console.log('state',this.state);
-        this.props.AddMenuMutation({
-            variables: {
-                name: this.state.name,
-                price: this.state.price,
-                type: this.state.type
-            }
-        }).then(function (res){
-            console.log(res);
-        });
-    }
-    render(){
-        return(
-            <form onSubmit={this.handleSubmit.bind(this)}>
-                <label key="name-label">
-                    Name:
-                    <input type="text" name="name" key="name" onChange={(e) => this.setState({name: e.target.value})}/>
-                </label>
-                <label key="price-label">
-                    Price:
-                    <input type="text" name="price" key="price" onChange={(e) => this.setState({price: parseFloat(e.target.value)})}/>
-                </label>
-                <label key="type-label">
-                    Type:
-                    <input type="text" name="type" key="type" onChange={(e) => this.setState({type: e.target.value})}/>
-                </label>
-                <button type="submit" name="Submit">Submit</button>
-            </form>
-        )
-    }
 
+export function AddMenu(props) {
+    const [name, setName] = useState("");
+    const [price, setPrice] = useState(0);
+    const [type, setType] = useState("");
+    const theme = useTheme();
+
+    return (
+        <React.Fragment>
+            <ResponsiveContainer className="recharts-wrapper">
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    props.AddMenuMutation({
+                        variables: {
+                            name: name,
+                            price: parseFloat(price),
+                            type: type
+                        }
+                    })
+                }}>
+                    <StepLabel key="name-label">
+                        Name:
+
+                    </StepLabel>
+                    <Input type="text" name="name" key="name" onChange={(e) => setName(e.target.value)}/>
+                    <StepLabel key="price-label">
+                        Price:
+                    </StepLabel>
+                    <Input color="primary" type="text" name="price" key="price" onChange={(e) => setPrice(e.target.value)} />
+                    <StepLabel key="type-label">
+                        Type:
+                    </StepLabel>
+                    <Input color="primary" type="text" name="type" key="type" onChange={(e) => setType(e.target.value)} />
+                    <br/>
+                    <Button style={{marginTop : 20 + 'px'}} type="submit" name="Submit" variant="contained" color="primary">Submit</Button>
+                </form>
+            </ResponsiveContainer>
+        </React.Fragment>
+    );
 }
 
 
 
-
-export default graphql(AddMenuMutation, {name: "AddMenuMutation"})(AddMenu)
+export default graphql(AddMenuMutation)(AddMenu)

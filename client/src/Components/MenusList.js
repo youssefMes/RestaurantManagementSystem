@@ -2,25 +2,56 @@ import React, {Component} from 'react';
 import { graphql } from 'react-apollo';
 import '../App.css';
 import {getMenusQuery} from "../queries/queries";
+import Title from "./Title";
+import Link from '@material-ui/core/Link';
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
-class MenusList extends Component{
-    render(){
-        console.log('this object', this);
-        console.log('data', this.props.data.menus)
-        if (this.props.data.loading) return 'Loading...';
-        if (this.props.data.error) return `Error! ${this.props.data.error.message}`;
-        if (this.props.data.menus !== undefined)return(
-            <div>
-                {this.props.data.menus.map(menu => (
-                    <li key={menu.id}>{menu.name}</li>
-                ))}
-            </div>
-        )
+const useStyles = makeStyles((theme) => ({
+    seeMore: {
+        marginTop: theme.spacing(3),
+    },
+}));
+export function MenusList(props){
+    const classes = useStyles();
+    console.log('props', props);
+    if (props.data.loading) return 'Loading...';
+    if (props.data.error) return `Error! {props.data.error.message}`;
+    if (props.data.menus !== undefined){
+        return(
+            <React.Fragment>
+                <Title>Menus</Title>
+                <Table size="small">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>ID</TableCell>
+                            <TableCell>Name</TableCell>
+                            <TableCell>Price </TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {props.data.menus.map((row) => (
+                            <TableRow key={row.id}>
+                                <TableCell>{row.id}</TableCell>
+                                <TableCell>{row.name}</TableCell>
+                                <TableCell>{row.price + "€"}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+                <div className={classes.seeMore}>
+                    <Link color="primary" href="#" onClick={(e) => e.preventDefault()}>
+                        See more Menus
+                    </Link>
+                </div>
+            </React.Fragment>)
     }
 
 }
-
-
 
 
 export default graphql(getMenusQuery)(MenusList);

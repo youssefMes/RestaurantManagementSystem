@@ -2,13 +2,11 @@ import React, {Component} from 'react';
 import './App.css';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
-import OrdersList from "./Components/OrdersList";
-import MenusList from "./Components/MenusList";
-import UsersList from "./Components/UsersList";
 import AddOrder from "./Components/AddOrder";
 import AddMenu from "./Components/AddMenu";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import AddUser from "./Components/addUser";
+import AddUser from "./Components/AddUser";
+import Dashboard from "./Components/Dashboard";
 
 
 const client = new ApolloClient({
@@ -24,22 +22,15 @@ class App extends Component{
             <ApolloProvider client={client}>
                 <Router>
                 <div>
-                    <Link to="/orders">Orders</Link>
-                    <Link to="/users">Users</Link>
-                    <Link to="/menus">Menus</Link>
-                    <Link to="/order/add">Add Order</Link>
-                    <Link to="/menu/add">Add Menu</Link>
-                    <Link to="/user/add">Add User</Link>
                     <Switch>
                         <Route path="/orders">
-                            <OrdersList/>
-                            <AddOrder/>
+                            <Dashboard list="Orders"/>
                         </Route>
                         <Route path="/users">
-                            <UsersList/>
+                            <Dashboard list="Users"/>
                         </Route>
                         <Route path="/menus">
-                            <MenusList/>
+                            <Dashboard list="Menus"/>
                         </Route>
                         <Route path="/order/add">
                             <AddOrder/>
