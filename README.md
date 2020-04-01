@@ -43,6 +43,7 @@ For more informations about the developpment process, please click on the follow
 ## Concept
 For more documentation about the concept of the project, please go check out [**wiki**](https://github.com/youssefMes/RestaurantManagementSystem/wiki/Home)
 
-## [Presentation video](https://drive.google.com/file/d/1cKYxEWIvmMuAhh0d2_VeStl4l1JR-v99/view)
+## Presentation video
+To see the presentation video, please click [**here**](https://drive.google.com/file/d/1cKYxEWIvmMuAhh0d2_VeStl4l1JR-v99/view)
 
 
