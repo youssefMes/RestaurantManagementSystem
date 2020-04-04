@@ -31,6 +31,7 @@ export function MenusList(props){
                             <TableCell>ID</TableCell>
                             <TableCell>Name</TableCell>
                             <TableCell>Price </TableCell>
+                            <TableCell>Creation </TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -39,6 +40,7 @@ export function MenusList(props){
                                 <TableCell>{row.id}</TableCell>
                                 <TableCell>{row.name}</TableCell>
                                 <TableCell>{row.price + "€"}</TableCell>
+                                <TableCell>{row.creation}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
